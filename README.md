@@ -178,7 +178,7 @@ Median: 74970 msg/sec
 ## 参考
 
 * [官方网站](http://www.coolpy.net)
-* [使用文档](docs/guide/guide_cn.md)
+* [使用文档](blob/main/docs/guide/guide_cn.md)
 
 ## 应用示例
 
