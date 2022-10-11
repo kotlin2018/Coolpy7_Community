@@ -23,6 +23,62 @@ Coolpy7社区版 是基于CloudWeGo-Netpoll为通信核心开发的高性能MQTT
     - 支持 Linux，macOS（操作系统）
     - Windows系统通过(docker支持)
 
+## 参考
+
+* [官方网站](http://www.coolpy.net)
+
+# 快速开始
+
+### 1. 下载
+
+[这里](https://github.com/Coolpy7/Coolpy7_Community/releases) 下载最新版本的各系统平台编译运行文件。
+
+### 2 服务参数
+
+```
+$ ./Coolpy7_Community_XXX -h
+$ Usage of ./Coolpy7_Community_XXX:
+  -j string
+        jwt secret key(multiple split by ,
+  -l string
+        host port (default 1883) (default ":1883")
+  -w string
+        host ws port (default 8083) (default ":8083")
+```
+
+参数说明:
+
+* `-l` tcp服务端口参数。 默认值1883端口，例示 :1883。
+* `-w` websocket服务端口参数。 默认值8083端口，例示 :8083。
+* `-j` jwt密钥参数。 默认值为空时MQTT服务不做任何身份验证，多个密钥是以半角豆号（,)分隔。例示 jwtsk1,jwtsk2,jwtsk3。
+
+### 3 运行服务
+
+参数说明:
+* 启动服务前请先确认相关执行权限
+
+```
+$ ./Coolpy7_Community_XXX -l=:1883 -w=:8083
+$ 2022/10/11 22:08:05 Coolpy7 Community On Port :1883
+$ 2022/10/11 22:08:05 Coolpy7 Community Websocket On Port :8083
+```
+
+### 4 安全关闭服务
+
+* kill -2 pid
+
+## 应用示例
+
+* **多种技术客户端示例** [APP(Android,Flutter)--后端(Golang,Java,Nodejs,Python3,C#)--前端(Electron,React,Vue,微信小程序,WebSocket)--单片机(ESP8266)](https://github.com/Coolpy7/mqtt-client-examples)
+
+- **Web浏览器应用示例**，[这里](https://github.com/Coolpy7/mqtt_web_browser_client)
+
+- **微信小程序聊天室示例**，[这里](https://github.com/Coolpy7/wxsmallapp)
+
+- **Web浏览器聊天室示例（可与微信小程序示例连同一Coolpy7后互相聊天）**：[这里](https://github.com/Coolpy7/Cp7Chat)
+
+- **Web浏览器mqtt.js客户端示例**， [这里](https://github.com/Coolpy7/mqttjs_browser_client_demo)
+
 ## 性能
 
 ### Qos0压力测试
@@ -174,59 +230,3 @@ Median: 74970 msg/sec
   < 145966 msg/sec  99%
   < 156705 msg/sec  100%
 ```
-
-## 参考
-
-* [官方网站](http://www.coolpy.net)
-
-# 快速开始
-
-### 1. 下载
-
-[这里](https://github.com/Coolpy7/Coolpy7_Community/releases) 下载最新版本的各系统平台编译运行文件。
-
-### 2 服务参数
-
-```
-$ ./Coolpy7_Community_XXX -h
-$ Usage of ./Coolpy7_Community_XXX:
-  -j string
-        jwt secret key(multiple split by ,
-  -l string
-        host port (default 1883) (default ":1883")
-  -w string
-        host ws port (default 8083) (default ":8083")
-```
-
-参数说明:
-
-* `-l` tcp服务端口参数。 默认值1883端口，例示 :1883。
-* `-w` websocket服务端口参数。 默认值8083端口，例示 :8083。
-* `-j` jwt密钥参数。 默认值为空时MQTT服务不做任何身份验证，多个密钥是以半角豆号（,)分隔。例示 jwtsk1,jwtsk2,jwtsk3。
-
-### 3 运行服务
-
-参数说明:
-* 启动服务前请先确认相关执行权限
-
-```
-$ ./Coolpy7_Community_XXX -l=:1883 -w=:8083
-$ 2022/10/11 22:08:05 Coolpy7 Community On Port :1883
-$ 2022/10/11 22:08:05 Coolpy7 Community Websocket On Port :8083
-```
-
-### 4 安全关闭服务
-
-* kill -2 pid
-
-## 应用示例
-
-* **多种技术客户端示例** [APP(Android,Flutter);后端(Golang,Java,Nodejs,Python3,C#);前端(Electron,React,Vue,微信小程序,WebSocket);单片机(ESP8266)](https://github.com/Coolpy7/mqtt-client-examples)
-
-- **Web浏览器应用示例**，https://github.com/Coolpy7/mqtt_web_browser_client
-
-- **微信小程序聊天室示例**，https://github.com/Coolpy7/wxsmallapp
-
-- **Web浏览器聊天室示例（可与微信小程序示例连同一Coolpy7后互相聊天）**：https://github.com/Coolpy7/Cp7Chat
-
-- **Web浏览器mqtt.js客户端示例**， https://github.com/Coolpy7/mqttjs_browser_client_demo
